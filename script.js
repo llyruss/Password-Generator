@@ -15,21 +15,42 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
 
-  getCharLength()
+  let chosenCharLength=getCharLength()
 
-  // //prompt for lowercase
-  // let isLowercase= confirm("Do you want to include lowercase letters? Click OK for yes and cancel for no.")
+  //prompt for lowercase
+  let isLowercase= confirm("Do you want to include lowercase letters? Click OK for yes and cancel for no.")
+    if(isLowercase===true) {
+      isCharTypeSelected = true
+    }
 
-  // //prompt for uppercase
-  // let isUppercase= confirm("Do you want to include uppercase letters? Click OK for yes and cancel for no.")
+  //prompt for uppercase
+  let isUppercase= confirm("Do you want to include uppercase letters? Click OK for yes and cancel for no.")
+    if(isUppercase===true){
+      isCharTypeSelected = true
+    }
 
-  // //prompt for numerical characters
-  // let hasNumbers= confirm("Do you want to include numbers in your password? Click OK for yes and cancel for no.")
+  //prompt for numerical characters
+  let hasNumbers= confirm("Do you want to include numbers in your password? Click OK for yes and cancel for no.")
+if(hasNumbers===true){
+  isCharTypeSelected = true
+}
 
-  // //prompt for special characters
-  // let hasSpecial= confirm("Do you want to special characters? Click OK for yes and cancel for no.")
+  //prompt for special characters
+  let hasSpecial= confirm("Do you want to special characters? Click OK for yes and cancel for no.")
+  if(hasSpecial===true){
+  isCharTypeSelected = true
+}
+if(isCharTypeSelected===false){
+alert("At least one character type must be selected.")
+generatePassword()
+}else {
+  console.log("Character type chosen.")}
 
 }
+
+let isCharTypeSelected = false
+
+
 let charLengthStr
 let charLengthInt
 
@@ -54,6 +75,4 @@ function getCharLength() {
   }
     console.log(charLengthInt)
   return charLengthInt
-
 }
-
