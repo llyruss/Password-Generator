@@ -30,26 +30,27 @@ function generatePassword() {
   // let hasSpecial= confirm("Do you want to special characters? Click OK for yes and cancel for no.")
 
 }
+let charLengthStr
+let charLengthInt
 
 function getCharLength() {
   //prompt for character length
-  let charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
-  let charLengthInt =   parseInt(charLengthStr)
+  console.log("getCharLength")
+  charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
+  charLengthInt =   parseInt(charLengthStr)
  
   //validate charLength
   console.log(charLengthInt)
 
   if(isNaN(charLengthInt)){
-    alert("Invalid character length.")
-    charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
-    charLengthInt =   parseInt(charLengthStr)
+    alert("Invalid character type.")
+    getCharLength()
   }
     console.log(charLengthInt)
 
   if(!(charLengthInt >=8 && charLengthInt <=128)) {
     alert("Invalid character length.")
-    charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
-    charLengthInt =   parseInt(charLengthStr)
+    getCharLength()
   }
     console.log(charLengthInt)
   return charLengthInt
