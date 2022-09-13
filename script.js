@@ -105,6 +105,12 @@ function generatePassword() {
 
   console.log(finalPassword)
 
+  //clear passwordArray and charArray so the password generator can start fresh again
+
+  charArray.length=0;
+  passwordArray.length=0;
+
+
   return finalPassword
 
 }
