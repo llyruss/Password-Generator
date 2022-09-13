@@ -109,6 +109,8 @@ function generatePassword() {
 
   charArray.length=0;
   passwordArray.length=0;
+  numCharTypes=0;
+  isCharTypeSelected = false;
 
 
   return finalPassword
