@@ -24,7 +24,6 @@ let special = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', 
 
 function generatePassword() {
 
-  
   //reset for new password
   charArray.length = 0;
   passwordArray.length = 0;
@@ -46,7 +45,6 @@ function generatePassword() {
     )
     console.log(passwordArray)
   }
-
 
   //prompt for uppercase
   let isUppercase = confirm("Do you want to include uppercase letters? Click OK for yes and cancel for no.")
@@ -82,7 +80,7 @@ function generatePassword() {
     console.log(passwordArray)
 
   }
-
+  
   console.log(charArray)
 
   if (isCharTypeSelected === false) {
@@ -120,6 +118,7 @@ function getCharLength() {
 
   let charLengthStr
   let charLengthInt
+
   //prompt for character length
   console.log("getCharLength")
   charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
