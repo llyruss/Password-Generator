@@ -4,6 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log("this is the generated password " + password)
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -20,11 +21,16 @@ let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let special = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~'];
 
-let numCharTypes = 0
-
 
 function generatePassword() {
 
+  
+  //reset for new password
+  charArray.length = 0;
+  passwordArray.length = 0;
+
+  let isCharTypeSelected = false
+  let numCharTypes = 0
   let chosenCharLength = getCharLength()
 
   //prompt for lowercase
@@ -105,25 +111,15 @@ function generatePassword() {
 
   console.log(finalPassword)
 
-  //clear passwordArray and charArray so the password generator can start fresh again
-
-  charArray.length=0;
-  passwordArray.length=0;
-  numCharTypes=0;
-  isCharTypeSelected = false;
-
 
   return finalPassword
 
 }
 
-let isCharTypeSelected = false
-
-
-let charLengthStr
-let charLengthInt
-
 function getCharLength() {
+
+  let charLengthStr
+  let charLengthInt
   //prompt for character length
   console.log("getCharLength")
   charLengthStr = prompt("Please choose how many characters you would like in your password. Choose a value between 8 and 128", "number of characters");
