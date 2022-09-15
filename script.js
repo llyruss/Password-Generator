@@ -109,15 +109,14 @@ function generatePassword() {
 
   console.log(finalPassword)
 
-
   return finalPassword
 
 }
 
-function getCharLength() {
-
   let charLengthStr
   let charLengthInt
+
+function getCharLength() {
 
   //prompt for character length
   console.log("getCharLength")
